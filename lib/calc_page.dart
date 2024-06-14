@@ -3,6 +3,8 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutterapp/calc_back.dart';
 
 class CalcPage extends StatelessWidget {
+  var symb = ['AC', '+/-', '%', '/', '*', '-', '+', '='];
+  int count = 0;
   final CalcBack calc = CalcBack();
 
   @override
@@ -34,332 +36,71 @@ class CalcPage extends StatelessWidget {
                 ],
               ),
               Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.purpleAccent),
-                              onPressed: calc.ac,
-                              child: Text(
-                                'AC',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.white),
-                              ),
-                            ),
-                          )),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.grey),
-                              onPressed: calc.seven,
-                              child: Text(
-                                '7',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.white),
-                              ),
-                            ),
-                          )),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.grey),
-                              onPressed: calc.four,
-                              child: Text(
-                                '4',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.white),
-                              ),
-                            ),
-                          )),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.grey),
-                              onPressed: calc.one,
-                              child: Text(
-                                '1',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.white),
-                              ),
-                            ),
-                          )),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.purpleAccent),
-                              onPressed: calc.plusminus,
-                              child: Text(
-                                '+/-',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.white),
-                              ),
-                            ),
-                          )),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.grey),
-                              onPressed: calc.eight,
-                              child: Text(
-                                '8',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.white),
-                              ),
-                            ),
-                          )),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.grey),
-                              onPressed: calc.five,
-                              child: Text(
-                                '5',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.white),
-                              ),
-                            ),
-                          )),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.grey),
-                              onPressed: calc.two,
-                              child: Text(
-                                '2',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.white),
-                              ),
-                            ),
-                          )),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.grey),
-                              onPressed: calc.zero,
-                              child: Text(
-                                '0',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.white),
-                              ),
-                            ),
-                          )),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.purpleAccent),
-                              onPressed: calc.peresent,
-                              child: Text(
-                                '%',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.white),
-                              ),
-                            ),
-                          )),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.grey),
-                              onPressed: calc.nine,
-                              child: Text(
-                                '9',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.white),
-                              ),
-                            ),
-                          )),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.grey),
-                              onPressed: calc.six,
-                              child: Text(
-                                '6',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.white),
-                              ),
-                            ),
-                          )),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.grey),
-                              onPressed: calc.three,
-                              child: Text(
-                                '3',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.white),
-                              ),
-                            ),
-                          )),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.grey),
-                              onPressed: () {},
-                              child: Text(
-                                ',',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.white),
-                              ),
-                            ),
-                          )),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.yellowAccent),
-                              onPressed: calc.division,
-                              child: Text(
-                                '/',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.black),
-                              ),
-                            ),
-                          )),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.yellowAccent),
-                              onPressed: calc.multiplication,
-                              child: Text(
-                                '*',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.black),
-                              ),
-                            ),
-                          )),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.yellowAccent),
-                              onPressed: calc.minus,
-                              child: Text(
-                                '-',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.black),
-                              ),
-                            ),
-                          )),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.yellowAccent),
-                              onPressed: calc.plus,
-                              child: Text(
-                                '+',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.black),
-                              ),
-                            ),
-                          )),
-                      Container(
-                          margin: EdgeInsets.symmetric(vertical: 5),
-                          child: SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.yellowAccent),
-                              onPressed: calc.answer,
-                              child: Text(
-                                '=',
-                                style: TextStyle(
-                                    fontSize: 23, color: Colors.black),
-                              ),
-                            ),
-                          )),
-                    ],
-                  )
-                ],
-              )
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    for (int i = 0; i < 4; i++)
+                      Column(children: [
+                        for (int j = 0; j < 5; j++)
+                          if (j == 0)
+                            Container(
+                                margin: EdgeInsets.all(5),
+                                height: 80,
+                                width: 80,
+                                child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                        backgroundColor: Colors.yellowAccent),
+                                    onPressed: () => calc.func(symb[i]),
+                                    child: Text(
+                                      symb[i],
+                                      style: TextStyle(
+                                          fontSize: 23, color: Colors.black),
+                                    )))
+                          else if (i == 3)
+                            Container(
+                                margin: EdgeInsets.all(5),
+                                height: 80,
+                                width: 80,
+                                child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                        backgroundColor: Colors.yellowAccent),
+                                    onPressed: () => calc.func(symb[j + 3]),
+                                    child: Text(
+                                      symb[j + 3],
+                                      style: TextStyle(
+                                          fontSize: 23, color: Colors.black),
+                                    )))
+                          else if (i == 2 && j == 4)
+                            Container(
+                                margin: EdgeInsets.all(5),
+                                height: 80,
+                                width: 80,
+                                child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                        backgroundColor: Colors.grey),
+                                    onPressed: calc.zero,
+                                    child: Text(
+                                      '0',
+                                      style: TextStyle(
+                                          fontSize: 23, color: Colors.white),
+                                    )))
+                          else if (j != 4)
+                            Container(
+                                margin: EdgeInsets.all(5),
+                                height: 80,
+                                width: 80,
+                                child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                        backgroundColor: Colors.grey),
+                                    onPressed: () =>
+                                        calc.setNumber(j * 3 + i + 1 - 3),
+                                    child: Text(
+                                      '${j * 3 + i + 1 - 3}',
+                                      style: TextStyle(
+                                          fontSize: 23, color: Colors.white),
+                                    )))
+                      ]),
+                  ])
             ])));
   }
 }

@@ -99,137 +99,15 @@ mixin _$CalcBack on CalcBackBase, Store {
   }
 
   @override
-  void one() {
-    final _$actionInfo =
-        _$CalcBackBaseActionController.startAction(name: 'CalcBackBase.one');
-    try {
-      return super.one();
-    } finally {
-      _$CalcBackBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  void two() {
-    final _$actionInfo =
-        _$CalcBackBaseActionController.startAction(name: 'CalcBackBase.two');
-    try {
-      return super.two();
-    } finally {
-      _$CalcBackBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  void three() {
-    final _$actionInfo =
-        _$CalcBackBaseActionController.startAction(name: 'CalcBackBase.three');
-    try {
-      return super.three();
-    } finally {
-      _$CalcBackBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  void four() {
-    final _$actionInfo =
-        _$CalcBackBaseActionController.startAction(name: 'CalcBackBase.four');
-    try {
-      return super.four();
-    } finally {
-      _$CalcBackBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  void five() {
-    final _$actionInfo =
-        _$CalcBackBaseActionController.startAction(name: 'CalcBackBase.five');
-    try {
-      return super.five();
-    } finally {
-      _$CalcBackBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  void six() {
-    final _$actionInfo =
-        _$CalcBackBaseActionController.startAction(name: 'CalcBackBase.six');
-    try {
-      return super.six();
-    } finally {
-      _$CalcBackBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  void seven() {
-    final _$actionInfo =
-        _$CalcBackBaseActionController.startAction(name: 'CalcBackBase.seven');
-    try {
-      return super.seven();
-    } finally {
-      _$CalcBackBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  void eight() {
-    final _$actionInfo =
-        _$CalcBackBaseActionController.startAction(name: 'CalcBackBase.eight');
-    try {
-      return super.eight();
-    } finally {
-      _$CalcBackBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  void nine() {
-    final _$actionInfo =
-        _$CalcBackBaseActionController.startAction(name: 'CalcBackBase.nine');
-    try {
-      return super.nine();
-    } finally {
-      _$CalcBackBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  void ac() {
-    final _$actionInfo =
-        _$CalcBackBaseActionController.startAction(name: 'CalcBackBase.ac');
-    try {
-      return super.ac();
-    } finally {
-      _$CalcBackBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  void plusminus() {
+  void setNumber(double number) {
     final _$actionInfo = _$CalcBackBaseActionController.startAction(
-        name: 'CalcBackBase.plusminus');
+        name: 'CalcBackBase.setNumber');
     try {
-      return super.plusminus();
+      return super.setNumber(number);
     } finally {
       _$CalcBackBaseActionController.endAction(_$actionInfo);
     }
   }
-
-  @override
-  void plus() {
-    final _$actionInfo =
-        _$CalcBackBaseActionController.startAction(name: 'CalcBackBase.plus');
-    try {
-      return super.plus();
-    } finally {
-      _$CalcBackBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
   @override
   String toString() {
     return '''
