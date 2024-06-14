@@ -4,7 +4,6 @@ import 'package:flutterapp/calc_back.dart';
 
 class CalcPage extends StatelessWidget {
   var symb = ['AC', '+/-', '%', '/', '*', '-', '+', '='];
-  int count = 0;
   final CalcBack calc = CalcBack();
 
   @override
