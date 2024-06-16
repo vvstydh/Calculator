@@ -42,64 +42,40 @@ class CalcPage extends StatelessWidget {
                       Column(children: [
                         for (int j = 0; j < 5; j++)
                           if (j == 0)
-                            Container(
-                                margin: EdgeInsets.all(5),
-                                height: 80,
-                                width: 80,
-                                child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colors.yellowAccent),
-                                    onPressed: () => calc.func(symb[i]),
-                                    child: Text(
-                                      symb[i],
-                                      style: TextStyle(
-                                          fontSize: 23, color: Colors.black),
-                                    )))
+                            buildButton(symb[i], Colors.yellowAccent, () {
+                              calc.func(symb[i]);
+                            })
                           else if (i == 3)
-                            Container(
-                                margin: EdgeInsets.all(5),
-                                height: 80,
-                                width: 80,
-                                child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colors.yellowAccent),
-                                    onPressed: () => calc.func(symb[j + 3]),
-                                    child: Text(
-                                      symb[j + 3],
-                                      style: TextStyle(
-                                          fontSize: 23, color: Colors.black),
-                                    )))
+                            buildButton(symb[j + 3], Colors.yellowAccent, () {
+                              calc.func(symb[j + 3]);
+                            })
                           else if (i == 2 && j == 4)
-                            Container(
-                                margin: EdgeInsets.all(5),
-                                height: 80,
-                                width: 80,
-                                child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colors.grey),
-                                    onPressed: calc.zero,
-                                    child: Text(
-                                      '0',
-                                      style: TextStyle(
-                                          fontSize: 23, color: Colors.white),
-                                    )))
+                            buildButton('0', Colors.grey, () {
+                              calc.zero();
+                            })
                           else if (j != 4)
-                            Container(
-                                margin: EdgeInsets.all(5),
-                                height: 80,
-                                width: 80,
-                                child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colors.grey),
-                                    onPressed: () =>
-                                        calc.setNumber(j * 3 + i + 1 - 3),
-                                    child: Text(
-                                      '${j * 3 + i + 1 - 3}',
-                                      style: TextStyle(
-                                          fontSize: 23, color: Colors.white),
-                                    )))
+                            buildButton('${j * 3 + i + 1 - 3}', Colors.grey,
+                                () {
+                              calc.setNumber(j * 3 + i + 1 - 3);
+                            })
                       ]),
                   ])
             ])));
   }
+}
+
+Widget buildButton(String text, Color color, VoidCallback onPressed) {
+  return Container(
+    margin: EdgeInsets.all(5),
+    height: 80,
+    width: 80,
+    child: ElevatedButton(
+      style: ElevatedButton.styleFrom(backgroundColor: color),
+      onPressed: onPressed,
+      child: Text(
+        text,
+        style: TextStyle(fontSize: 23, color: Colors.black),
+      ),
+    ),
+  );
 }
